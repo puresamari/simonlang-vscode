@@ -1,0 +1,38 @@
+{
+  "name": "simonlang",
+  "displayName": "SimonLang",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "simon",
+        "aliases": [
+          "SimonLang",
+          "simon"
+        ],
+        "extensions": [
+          "simon"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/simonlang.png",
+          "dark": "./icons/simonlang.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "simon",
+        "scopeName": "source.simon",
+        "path": "./syntaxes/simon.tmLanguage.json"
+      }
+    ]
+  }
+}
