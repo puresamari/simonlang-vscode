@@ -1,6 +1,7 @@
 {
   "name": "simonlang",
   "displayName": "SimonLang",
+  "author": "Simon Rothert <puresamari@gmail.com>",
   "description": "",
   "version": "0.0.1",
   "engines": {

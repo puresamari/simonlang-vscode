@@ -3,34 +3,84 @@
   "name": "SimonLang",
   "patterns": [
     { "include": "#invalid" },
-    { "include": "#keywords" },
-    { "include": "#strings" }
+    { "include": "#line" }
   ],
   "repository": {
+    "invalid": {
+      "name": "invalid.non-simon-line",
+      "match": "^(?!(simon\\s)).+\n"
+    },
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.indicator",
-          "match": "^simon "
+          "name": "keyword.control.indicator",
+          "match": "^simon\\s"
         }
       ]
     },
-    "invalid": {
+    "line": {
+      "name": "entity.other.command",
+      "begin": "^",
+      "end": "\\n",
+      "patterns": [
+        { "include": "#keywords" },
+        { "include": "#commands" }
+      ]
+    },
+    "constants": {
       "patterns": [
         {
-          "name": "invalid.non-simon-line",
-          "match": "^(?!(simon)).+\n"
+          "name": "constant.numeric",
+          "match": "(\\d|\\s)+\\d"
+        },
+        {
+          "name": "string.double",
+          "match": "."
         }
       ]
     },
-    "strings": {
-      "name": "string.quoted.double.simon",
-      "begin": "\"",
-      "end": "\"",
+    "commands": {
       "patterns": [
         {
-          "name": "constant.character.escape.simon",
-          "match": "\\\\."
+          "name": "entity.name.function.maths",
+          "begin": "(adds|multiplies|divides|subtracts)\\s",
+          "end": "\\n",
+          "patterns": [
+            { "include": "#keywords" },
+            { "include": "#constants" },
+            {
+              "name": "keyword.operator.addition-command-operator",
+              "match": "\\sto\\s"
+            }
+          ]
+        },
+        {
+          "name": "entity.name.function.print",
+          "begin": "says\\s",
+          "end": "\\n",
+          "patterns": [
+            {
+              "name": "string",
+              "match": "."
+            }
+          ]
+        },
+        {
+          "name": "entity.name.function.declaration",
+          "begin": "declares\\s",
+          "end": "\\n",
+          "patterns": [
+            {
+              "name": "keyword.operator.addition-command-operator",
+              "match": "\\sis\\s"
+            },
+            {
+              "name": "keyword.operator.chained",
+              "match": "\\s(minus|plus|divided by|multiplied by)\\s"
+            },
+            { "include": "#keywords" },
+            { "include": "#constants" }
+          ]
         }
       ]
     }
