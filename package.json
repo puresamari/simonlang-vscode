@@ -3,7 +3,7 @@
   "displayName": "SimonLang",
   "author": "Simon Rothert <puresamari@gmail.com>",
   "description": "",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "Apache-2.0",
   "engines": {
     "vscode": "^1.67.0"
