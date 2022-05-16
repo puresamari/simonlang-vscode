@@ -6,4 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.1.0] - 2022-05-16
+### Changed
+- New icon for `.simon` files for readability.
+
+## [1.0.0] - 2022-05-16
+### Added
 - Initial release
